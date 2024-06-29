@@ -2,8 +2,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../CartContext';
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
-import Logo  from '../images/1-19.png';
+// import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+// import Logo  from '../images/1-19.png';
 import {useUser} from '../Provider/UserProvider';
 
 const Pages = () => {
@@ -22,45 +22,45 @@ const handleLogout=()=>{
   return (
     < > 
     <header>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="top-header">
-                        <a href="index.html" class="cr-logo">
-                            <img src="assets/img/logo/logo.png" alt="logo" class="logo"/>
-                            <img src="assets/img/logo/dark-logo.png" alt="logo" class="dark-logo"/>
+        <div className="container">
+            <div className="row">
+                <div className="col-lg-12">
+                    <div className="top-header">
+                        <a href="index.html" className="cr-logo">
+                            <img src="assets/img/logo/logo.png" alt="logo" className="logo"/>
+                            <img src="assets/img/logo/dark-logo.png" alt="logo" className="dark-logo"/>
                         </a>
-                        <form class="cr-search">
-                            <input class="search-input" type="text" placeholder="Search For items..."/>
-                            <select class="form-select" aria-label="Default select example">
+                        <form className="cr-search">
+                            <input className="search-input" type="text" placeholder="Search For items..."/>
+                            <select className="form-select" aria-label="Default select example">
                                 <option selected>All Categories</option>
                                 <option value="1">Mens</option>
                                 <option value="2">Womens</option>
                                 <option value="3">Electronics</option>
                             </select>
-                            <a href="javascript:void(0)" class="search-btn">
-                                <i class="ri-search-line"></i>
-                            </a>
+                            <Link className="search-btn">
+                                <i className="ri-search-line"></i>
+                            </Link>
                         </form>
-                        <div class="cr-right-bar">
-                            <ul class="navbar-nav">
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle cr-right-bar-item" href="javascript:void(0)">
-                                        <i class="ri-user-3-line"></i>
+                        <div className="cr-right-bar">
+                            <ul className="navbar-nav">
+                                <li className="nav-item dropdown">
+                                    <Link className="nav-link dropdown-toggle cr-right-bar-item" >
+                                        <i className="ri-user-3-line"></i>
                                         <span>
                                             {isUserLoggedIn ? userDetails.firstName:'Account'}
                                         </span>
-                                    </a>
-                                    <ul class="dropdown-menu">
+                                    </Link>
+                                    <ul className="dropdown-menu">
                                         {
                                             isUserLoggedIn ?
                                             (
                                                 <>
                                                 <li>
-                                                <Link class="dropdown-item" to="/UserDashBoard">User Profile</Link>
+                                                <Link className="dropdown-item" to="/UserDashBoard">User Profile</Link>
                                                 </li>
                                                  <li>
-                                                 <Link class="dropdown-item" to="/">
+                                                 <Link className="dropdown-item" to="/">
                                                     <button className='cr-button' onClick={handleLogout}>
                                                         Logout
                                                     </button>   
@@ -73,13 +73,13 @@ const handleLogout=()=>{
                                             (
                                                 <>
                                                 <li>
-                                                <Link class="dropdown-item" to="/Register">Register</Link>
+                                                <Link className="dropdown-item" to="/Register">Register</Link>
                                                 </li>
                                                 <li>
-                                                <Link class="dropdown-item" to="/Checkout">Checkout</Link>
+                                                <Link className="dropdown-item" to="/Checkout">Checkout</Link>
                                             </li>
                                             <li>
-                                                <Link class="dropdown-item" to="/Login">Login</Link>
+                                                <Link className="dropdown-item" to="/Login">Login</Link>
                                             </li>
                                             </>
 
@@ -91,12 +91,12 @@ const handleLogout=()=>{
                                     </ul>
                                 </li>
                             </ul>
-                            <a href="wishlist.html" class="cr-right-bar-item">
-                                <i class="ri-heart-3-line"></i>
+                            <a href="wishlist.html" className="cr-right-bar-item">
+                                <i className="ri-heart-3-line"></i>
                                 <span>Wishlist</span>
                             </a>
-                            <Link to="/Cart" class="cr-right-bar-item Shopping-toggle">
-                                <i class="ri-shopping-cart-line"> </i>
+                            <Link to="/Cart" className="cr-right-bar-item Shopping-toggle">
+                                <i className="ri-shopping-cart-line"> </i>
                                 <span>Cart({cart.length})</span>
                             </Link>
                         </div>
@@ -104,46 +104,46 @@ const handleLogout=()=>{
                 </div>
             </div>
         </div>
-        <div class="cr-fix" id="cr-main-menu-desk">
-            <div class="container">
-                <div class="cr-menu-list">
-                    <div class="cr-category-icon-block">
-                        <div class="cr-category-menu">
-                            <div class="cr-category-toggle">
-                                <i class="ri-menu-2-line"></i>
+        <div className="cr-fix" id="cr-main-menu-desk">
+            <div className="container">
+                <div className="cr-menu-list">
+                    <div className="cr-category-icon-block">
+                        <div className="cr-category-menu">
+                            <div className="cr-category-toggle">
+                                <i className="ri-menu-2-line"></i>
                             </div>
                         </div>
-                        <div class="cr-cat-dropdown">
-                            <div class="cr-cat-block">
-                                <div class="cr-cat-tab">
-                                    <div class="cr-tab-list nav flex-column nav-pills" id="v-pills-tab" role="tablist"
+                        <div className="cr-cat-dropdown">
+                            <div className="cr-cat-block">
+                                <div className="cr-cat-tab">
+                                    <div className="cr-tab-list nav flex-column nav-pills" id="v-pills-tab" role="tablist"
                                         aria-orientation="vertical">
-                                        <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill"
+                                        <button className="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill"
                                             data-bs-target="#v-pills-home" type="button" role="tab"
                                             aria-controls="v-pills-home" aria-selected="true">
                                             Dairy &amp; Bakery</button>
-                                        <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill"
+                                        <button className="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill"
                                             data-bs-target="#v-pills-profile" type="button" role="tab"
                                             aria-controls="v-pills-profile" aria-selected="false" tabindex="-1">
                                             Fruits &amp; Vegetable</button>
-                                        <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill"
+                                        <button className="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill"
                                             data-bs-target="#v-pills-messages" type="button" role="tab"
                                             aria-controls="v-pills-messages" aria-selected="false" tabindex="-1">
                                             Snack &amp; Spice</button>
-                                        <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill"
+                                        <button className="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill"
                                             data-bs-target="#v-pills-settings" type="button" role="tab"
                                             aria-controls="v-pills-settings" aria-selected="false" tabindex="-1">
                                             Juice &amp; Drinks </button>
-                                        <a class="nav-link" href="shop-left-sidebar.html">
+                                        <a className="nav-link" href="shop-left-sidebar.html">
                                             View All </a>
                                     </div>
-                                    <div class="tab-content" id="v-pills-tabContent">
-                                        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel"
+                                    <div className="tab-content" id="v-pills-tabContent">
+                                        <div className="tab-pane fade show active" id="v-pills-home" role="tabpanel"
                                             aria-labelledby="v-pills-home-tab">
-                                            <div class="tab-list row">
-                                                <div class="col">
-                                                    <h6 class="cr-col-title">Dairy</h6>
-                                                    <ul class="cat-list">
+                                            <div className="tab-list row">
+                                                <div className="col">
+                                                    <h6 className="cr-col-title">Dairy</h6>
+                                                    <ul className="cat-list">
                                                         <li><a href="shop-left-sidebar.html">Milk</a></li>
                                                         <li><a href="shop-left-sidebar.html">Ice cream</a>
                                                         </li>
@@ -156,9 +156,9 @@ const handleLogout=()=>{
                                                         </li>
                                                     </ul>
                                                 </div>
-                                                <div class="col">
-                                                    <h6 class="cr-col-title">Bakery</h6>
-                                                    <ul class="cat-list">
+                                                <div className="col">
+                                                    <h6 className="cr-col-title">Bakery</h6>
+                                                    <ul className="cat-list">
                                                         <li><a href="shop-left-sidebar.html">Cake and
                                                                 Pastry</a>
                                                         </li>
@@ -176,12 +176,12 @@ const handleLogout=()=>{
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
+                                        <div className="tab-pane fade" id="v-pills-profile" role="tabpanel"
                                             aria-labelledby="v-pills-profile-tab">
-                                            <div class="tab-list row">
-                                                <div class="col">
-                                                    <h6 class="cr-col-title">Fruits</h6>
-                                                    <ul class="cat-list">
+                                            <div className="tab-list row">
+                                                <div className="col">
+                                                    <h6 className="cr-col-title">Fruits</h6>
+                                                    <ul className="cat-list">
                                                         <li><a href="shop-left-sidebar.html">Cauliflower</a>
                                                         </li>
                                                         <li><a href="shop-left-sidebar.html">Bell
@@ -193,9 +193,9 @@ const handleLogout=()=>{
                                                         <li><a href="shop-left-sidebar.html">Tomato</a></li>
                                                     </ul>
                                                 </div>
-                                                <div class="col">
-                                                    <h6 class="cr-col-title">Vegetable</h6>
-                                                    <ul class="cat-list">
+                                                <div className="col">
+                                                    <h6 className="cr-col-title">Vegetable</h6>
+                                                    <ul className="cat-list">
                                                         <li><a href="shop-left-sidebar.html">Cauliflower</a>
                                                         </li>
                                                         <li><a href="shop-left-sidebar.html">Bell
@@ -209,12 +209,12 @@ const handleLogout=()=>{
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="tab-pane fade" id="v-pills-messages" role="tabpanel"
+                                        <div className="tab-pane fade" id="v-pills-messages" role="tabpanel"
                                             aria-labelledby="v-pills-messages-tab">
-                                            <div class="tab-list row">
-                                                <div class="col">
-                                                    <h6 class="cr-col-title">Snacks</h6>
-                                                    <ul class="cat-list">
+                                            <div className="tab-list row">
+                                                <div className="col">
+                                                    <h6 className="cr-col-title">Snacks</h6>
+                                                    <ul className="cat-list">
                                                         <li><a href="shop-left-sidebar.html">French
                                                                 fries</a></li>
                                                         <li><a href="shop-left-sidebar.html">potato
@@ -227,9 +227,9 @@ const handleLogout=()=>{
                                                         </li>
                                                     </ul>
                                                 </div>
-                                                <div class="col">
-                                                    <h6 class="cr-col-title">Spice</h6>
-                                                    <ul class="cat-list">
+                                                <div className="col">
+                                                    <h6 className="cr-col-title">Spice</h6>
+                                                    <ul className="cat-list">
                                                         <li><a href="shop-left-sidebar.html">Cinnamon
                                                                 Powder</a>
                                                         </li>
@@ -247,12 +247,12 @@ const handleLogout=()=>{
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="tab-pane fade" id="v-pills-settings" role="tabpanel"
+                                        <div className="tab-pane fade" id="v-pills-settings" role="tabpanel"
                                             aria-labelledby="v-pills-settings-tab">
-                                            <div class="tab-list row">
-                                                <div class="col">
-                                                    <h6 class="cr-col-title">Juice</h6>
-                                                    <ul class="cat-list">
+                                            <div className="tab-list row">
+                                                <div className="col">
+                                                    <h6 className="cr-col-title">Juice</h6>
+                                                    <ul className="cat-list">
                                                         <li><a href="shop-left-sidebar.html">Mango Juice</a>
                                                         </li>
                                                         <li><a href="shop-left-sidebar.html">Coconut
@@ -266,9 +266,9 @@ const handleLogout=()=>{
                                                                 Juice</a></li>
                                                     </ul>
                                                 </div>
-                                                <div class="col">
-                                                    <h6 class="cr-col-title">soft drink</h6>
-                                                    <ul class="cat-list">
+                                                <div className="col">
+                                                    <h6 className="cr-col-title">soft drink</h6>
+                                                    <ul className="cat-list">
                                                         <li><a href="shop-left-sidebar.html">Breizh Cola</a>
                                                         </li>
                                                         <li><a href="shop-left-sidebar.html">Green Cola</a>
@@ -288,136 +288,136 @@ const handleLogout=()=>{
                             </div>
                         </div>
                     </div>
-                    <nav class="navbar navbar-expand-lg">
-                        <a href="javascript:void(0)" class="navbar-toggler shadow-none">
-                            <i class="ri-menu-3-line"></i>
-                        </a>
-                        <div class="cr-header-buttons">
-                            <ul class="navbar-nav">
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link" href="javascript:void(0)">
-                                        <i class="ri-user-3-line"></i>
-                                    </a>
-                                    <ul class="dropdown-menu">
+                    <nav className="navbar navbar-expand-lg">
+                        <Link className="navbar-toggler shadow-none">
+                            <i className="ri-menu-3-line"></i>
+                        </Link>
+                        <div className="cr-header-buttons">
+                            <ul className="navbar-nav">
+                                <li className="nav-item dropdown">
+                                    <Link className="nav-link" >
+                                        <i className="ri-user-3-line"></i>
+                                    </Link>
+                                    <ul className="dropdown-menu">
                                         <li>
-                                            <Link class="dropdown-item" to="/Register">Register</Link>
+                                            <Link className="dropdown-item" to="/Register">Register</Link>
                                         </li>
                                         <li>
-                                            <Link class="dropdown-item" to="/Checkout">Checkout</Link>
+                                            <Link className="dropdown-item" to="/Checkout">Checkout</Link>
                                         </li>
                                         <li>
-                                            <Link class="dropdown-item" to="/Login">Login</Link>
+                                            <Link className="dropdown-item" to="/Login">Login</Link>
                                         </li>
                                     </ul>
                                 </li>
                             </ul>
-                            <a href="wishlist.html" class="cr-right-bar-item">
-                                <i class="ri-heart-line"></i>
+                            <a href="wishlist.html" className="cr-right-bar-item">
+                                <i className="ri-heart-line"></i>
                             </a>
-                            <Link to="/Cart" class="cr-right-bar-item Shopping-toggle">
-                                <i class="ri-shopping-cart-line"> ({cart.length})</i>
+                            <Link to="/Cart" className="cr-right-bar-item Shopping-toggle">
+                                <i className="ri-shopping-cart-line"> ({cart.length})</i>
   
                             </Link>
                         </div>
-                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav">
-                                <li class="nav-item">
-                                    <Link class="nav-link" to="/">
+                        <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul className="navbar-nav">
+                                <li className="nav-item">
+                                    <Link className="nav-link" to="/">
                                         Home
                                     </Link>
                                 </li>
                                 
-                                <li class="nav-item">
-                                  <Link class="nav-link" to="/About">
+                                <li className="nav-item">
+                                  <Link className="nav-link" to="/About">
                                      About
                                     </Link>
                                 </li>
                                 
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="javascript:void(0)">
+                                <li className="nav-item dropdown">
+                                    <Link className="nav-link dropdown-toggle">
                                         Products
-                                    </a>
-                                    <ul class="dropdown-menu">
+                                    </Link>
+                                    <ul className="dropdown-menu">
                                         <li>
-                                            <a class="dropdown-item" href="product-left-sidebar.html">product
+                                            <a className="dropdown-item" href="product-left-sidebar.html">product
                                                 Left
                                                 sidebar </a>
                                         </li>
                                         <li>
-                                            <a class="dropdown-item" href="product-right-sidebar.html">product
+                                            <a className="dropdown-item" href="product-right-sidebar.html">product
                                                 Right
                                                 sidebar </a>
                                         </li>
                                         <li>
-                                            <a class="dropdown-item" href="product-full-width.html">Product
+                                            <a className="dropdown-item" href="product-full-width.html">Product
                                                 Full
                                                 Width
                                             </a>
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="nav-item dropdown">
-                                    <Link class="nav-link dropdown-toggle" to="/Contact">
+                                <li className="nav-item dropdown">
+                                    <Link className="nav-link dropdown-toggle" to="/Contact">
                                        Contact
                                     </Link>
                                    
                                 </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="javascript:void(0)">
+                                <li className="nav-item dropdown">
+                                    <Link className="nav-link dropdown-toggle">
                                         Blog
-                                    </a>
-                                    <ul class="dropdown-menu">
+                                    </Link>
+                                    <ul className="dropdown-menu">
                                         <li>
-                                            <a class="dropdown-item" href="blog-left-sidebar.html">Left
+                                            <a className="dropdown-item" href="blog-left-sidebar.html">Left
                                                 Sidebar</a>
                                         </li>
                                         <li>
-                                            <a class="dropdown-item" href="blog-right-sidebar.html">Right
+                                            <a className="dropdown-item" href="blog-right-sidebar.html">Right
                                                 Sidebar</a>
                                         </li>
                                         <li>
-                                            <a class="dropdown-item" href="blog-full-width.html">Full
+                                            <a className="dropdown-item" href="blog-full-width.html">Full
                                                 Width</a>
                                         </li>
                                         <li>
-                                            <a class="dropdown-item" href="blog-detail-left-sidebar.html">Detail
+                                            <a className="dropdown-item" href="blog-detail-left-sidebar.html">Detail
                                                 Left
                                                 Sidebar</a>
                                         </li>
                                         <li>
-                                            <a class="dropdown-item" href="blog-detail-right-sidebar.html">Detail
+                                            <a className="dropdown-item" href="blog-detail-right-sidebar.html">Detail
                                                 Right
                                                 Sidebar</a>
                                         </li>
                                         <li>
-                                            <a class="dropdown-item" href="blog-detail-full-width.html">Detail
+                                            <a className="dropdown-item" href="blog-detail-full-width.html">Detail
                                                 Full
                                                 Width</a>
                                         </li>
                                     </ul>
                                 </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="javascript:void(0)">
+                                <li className="nav-item dropdown">
+                                    <Link className="nav-link dropdown-toggle" >
                                         Elements
-                                    </a>
-                                    <ul class="dropdown-menu">
+                                    </Link>
+                                    <ul className="dropdown-menu">
                                         <li>
-                                            <a class="dropdown-item" href="elements-products.html">Products</a>
+                                            <a className="dropdown-item" href="elements-products.html">Products</a>
                                         </li>
                                         <li>
-                                            <a class="dropdown-item" href="elements-typography.html">Typography</a>
+                                            <a className="dropdown-item" href="elements-typography.html">Typography</a>
                                         </li>
                                         <li>
-                                            <a class="dropdown-item" href="elements-buttons.html">Buttons</a>
+                                            <a className="dropdown-item" href="elements-buttons.html">Buttons</a>
                                         </li>
                                     </ul>
                                 </li>
                             </ul>
                         </div>
                     </nav>
-                    <div class="cr-calling">
-                        <i class="ri-phone-line"></i>
-                        <a href="javascript:void(0)">+123 ( 456 ) ( 7890 )</a>
+                    <div className="cr-calling">
+                        <i className="ri-phone-line"></i>
+                        <span>+123 ( 456 ) ( 7890 )</span>
                     </div>
                 </div>
             </div>
@@ -425,40 +425,40 @@ const handleLogout=()=>{
     </header>
 
   
-    <div class="cr-sidebar-overlay"></div>
-    <div id="cr_mobile_menu" class="cr-side-cart cr-mobile-menu">
-        <div class="cr-menu-title">
-            <span class="menu-title">My Menu</span>
-            <button type="button" class="cr-close">×</button>
+    <div className="cr-sidebar-overlay"></div>
+    <div id="cr_mobile_menu" className="cr-side-cart cr-mobile-menu">
+        <div className="cr-menu-title">
+            <span className="menu-title">My Menu</span>
+            <button type="button" className="cr-close">×</button>
         </div>
-        <div class="cr-menu-inner">
-            <div class="cr-menu-content">
+        <div className="cr-menu-inner">
+            <div className="cr-menu-content">
                 <ul>
-                    <li class="dropdown drop-list">
+                    <li className="dropdown drop-list">
                         <Link to="/">Home</Link>
                     </li>
-                    <li class="dropdown drop-list">
-                        <span class="menu-toggle"></span>
-                        <a href="javascript:void(0)" class="dropdown-list">Category</a>
-                        <ul class="sub-menu">
+                    <li className="dropdown drop-list">
+                        <span className="menu-toggle"></span>
+                        <Link  className="dropdown-list">Category</Link>
+                        <ul className="sub-menu">
                             <li><a href="shop-left-sidebar.html">Shop Left sidebar</a></li>
                             <li><a href="shop-right-sidebar.html">Shop Right sidebar</a></li>
                             <li><a href="shop-full-width.html">Full Width</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown drop-list">
-                        <span class="menu-toggle"></span>
-                        <a href="javascript:void(0)" class="dropdown-list">product</a>
-                        <ul class="sub-menu">
+                    <li className="dropdown drop-list">
+                        <span className="menu-toggle"></span>
+                        <Link className="dropdown-list">product</Link>
+                        <ul className="sub-menu">
                             <li><a href="product-left-sidebar.html">product Left sidebar</a></li>
                             <li><a href="product-right-sidebar.html">product Right sidebar</a></li>
                             <li><a href="product-full-width.html">Product Full Width </a></li>
                         </ul>
                     </li>
-                    <li class="dropdown drop-list">
-                        <span class="menu-toggle"></span>
-                        <a href="javascript:void(0)" class="dropdown-list">Pages</a>
-                        <ul class="sub-menu">
+                    <li className="dropdown drop-list">
+                        <span className="menu-toggle"></span>
+                        <Link className="dropdown-list">Pages</Link>
+                        <ul className="sub-menu">
                             <li><a href="about.html">About Us</a></li>
                             <li><a href="contact-us.html">Contact Us</a></li>
                             <li><a href="cart.html">Cart</a></li>
@@ -471,10 +471,10 @@ const handleLogout=()=>{
                             <li><a href="policy.html">Policy</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown drop-list">
-                        <span class="menu-toggle"></span>
-                        <a href="javascript:void(0)" class="dropdown-list">Blog</a>
-                        <ul class="sub-menu">
+                    <li className="dropdown drop-list">
+                        <span className="menu-toggle"></span>
+                        <Link  className="dropdown-list">Blog</Link>
+                        <ul className="sub-menu">
                             <li><a href="blog-left-sidebar.html">Left Sidebar</a></li>
                             <li><a href="blog-right-sidebar.html">Right Sidebar</a></li>
                             <li><a href="blog-full-width.html">Full Width</a></li>
@@ -483,10 +483,10 @@ const handleLogout=()=>{
                             <li><a href="blog-detail-full-width.html">Detail Full Width</a></li>
                         </ul>
                     </li>
-                    <li class="dropdown drop-list">
-                        <span class="menu-toggle"></span>
-                        <a href="javascript:void(0)">Element</a>
-                        <ul class="sub-menu">
+                    <li className="dropdown drop-list">
+                        <span className="menu-toggle"></span>
+                        <Link >Element</Link>
+                        <ul className="sub-menu">
                             <li><a href="elements-products.html">Products</a></li>
                             <li><a href="elements-typography.html">Typography</a></li>
                             <li><a href="elements-buttons.html">Buttons</a></li>

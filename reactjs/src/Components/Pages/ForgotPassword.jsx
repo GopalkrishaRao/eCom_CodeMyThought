@@ -6,12 +6,12 @@
 
          <>
    
-    <section class="section-breadcrumb">
-        <div class="cr-breadcrumb-image">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="cr-breadcrumb-title">
+    <section className="section-breadcrumb">
+        <div className="cr-breadcrumb-image">
+            <div className="container">
+                <div className="row">
+                    <div className="col-lg-12">
+                        <div className="cr-breadcrumb-title">
                             <h2>Forgot Password</h2>
                             <span> <Link to="/">Home</Link> - Forgot Password</span>
                         </div>
@@ -22,35 +22,35 @@
     </section>
 
   
-    <section class="section-login padding-tb-100">
-        <div class="container">
-            <div class="row d-none">
-                <div class="col-lg-12">
-                    <div class="mb-30" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="400">
-                        <div class="cr-banner">
+    <section className="section-login padding-tb-100">
+        <div className="container">
+            <div className="row d-none">
+                <div className="col-lg-12">
+                    <div className="mb-30" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="400">
+                        <div className="cr-banner">
                             <h2>Forgot Password</h2>
                         </div>
-                        <div class="cr-banner-sub-title">
+                        <div className="cr-banner-sub-title">
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
                                 ut labore lacus vel facilisis. </p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-12">
-                    <div class="cr-login" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="400">
-                        <div class="form-logo">
+            <div className="row">
+                <div className="col-12">
+                    <div className="cr-login" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="400">
+                        <div className="form-logo">
                             <img src="assets/img/logo/logo.png" alt="logo"/>
                         </div>
-                        <form class="cr-content-form">
-                            <div class="form-group">
+                        <form className="cr-content-form">
+                            <div className="form-group">
                                 <label>Email Address*</label>
-                                <input type="email" placeholder="Enter Your Email" class="cr-form-control"/>
+                                <input type="email" placeholder="Enter Your Email" className="cr-form-control"/>
                             </div>
-                            <div class="login-buttons">
-                                <button type="button" class="cr-button">Submit</button>
-                                <a href="register.html" class="link">
+                            <div className="login-buttons">
+                                <button type="button" className="cr-button">Submit</button>
+                                <a href="register.html" className="link">
                                     Signup?
                                 </a>
                             </div>

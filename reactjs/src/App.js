@@ -14,6 +14,7 @@ import ProductDetail from './Components/Pages/ProductDetail';
 import Checkout from './Components/Checkout/Checkout';
 import Footer from './Components/Pages/Footer';
 import UserDashBoard from './Components/Pages/UserDashBoard';
+import ErrorPage from './Components/Pages/ErrorPage';
 
 
 const App = () => {
@@ -31,8 +32,10 @@ const App = () => {
         <Route path='/UserDashBoard' element={<UserDashBoard/>}/>
         <Route path="/ForgoPassword" element={<ForgoPassword/>} />
         <Route path="/product/:id" element={<ProductDetail />} />
-   
+
         <Route path="/Checkout" element={<Checkout/>} />
+        <Route path='*' element={<ErrorPage/>}/>
+
       </Routes>
     <Footer/>
   </Router> 

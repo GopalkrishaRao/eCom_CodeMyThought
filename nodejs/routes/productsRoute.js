@@ -17,6 +17,7 @@ router.get('/product', async (req, res) => {
 router.get('/product/:id', async (req, res) => {
   const { id } = req.params;
   try {
+    console.log("testing route");
     const connection = await pool.getConnection();
     const [rows] = await connection.execute('SELECT * FROM product WHERE id = ?', [id]);
     connection.release();

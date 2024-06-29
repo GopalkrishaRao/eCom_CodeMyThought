@@ -1,30 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Link } from 'react-router-dom';
 // Ensure any other custom CSS files are imported as well
 
 import { useParams } from 'react-router-dom';
 import { useCart } from '../CartContext';
-import SideBar from './SideBar';
-import axios from 'axios';
+// import SideBar from './SideBar';
+// import axios from 'axios';
+
+import { useProducts } from '../Provider/ProductProvider';
+
+
 
 const ProductDetail = () => {
+
+  const {products} = useProducts();
+
+  
   const { id } = useParams();
+
+
   const [product, setProduct] = useState(null);
   const { addToCart, incrementItem, decrementItem } = useCart();
   const [quantity, setQuantity] = useState(1);
 
-  useEffect(() => {
-    const fetchProduct = async () => {
-      try {
-        const response = await axios.get(`http://localhost:3010/api/product/${id}`);
-        setProduct(response.data);
-      } catch (error) {
-        console.error('Error fetching product:', error);
-      }
-    };
-    fetchProduct();
-  }, [id]);
+  useEffect(()=>{
+    setProduct(products);
+  }, [products])
 
   if (!product) {
     return <div>Loading...</div>;
@@ -67,7 +70,7 @@ const ProductDetail = () => {
       <section className="section-product padding-t-100">
         <div className="container">
           <div className="row">
-            <SideBar />
+            {/* <SideBar /> */}
             <div className="col-lg-9 col-12 md-30" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="600">
               <div className="row mb-minus-24">
                 <div className="col-md-6 col-12 mb-24">
@@ -125,12 +128,13 @@ const ProductDetail = () => {
                         <button type="button" className="cr-button cr-shopping-bag" onClick={handleAddToCart}>Add to cart</button>
                       </div>
                       <div className="cr-card-icon">
-                        <a href="javascript:void(0)" className="wishlist">
+                        {/* on click function to quick view and add to wishlist */}
+                        <Link className="wishlist">
                           <i className="ri-heart-line"></i>
-                        </a>
-                        <a className="model-oraganic-product" data-bs-toggle="modal" href="#quickview" role="button">
+                        </Link>
+                        <Link className="model-oraganic-product" data-bs-toggle="modal"  role="button">
                           <i className="ri-eye-line"></i>
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>

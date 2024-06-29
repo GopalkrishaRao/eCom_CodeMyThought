@@ -565,9 +565,9 @@
     portfolioContent.mixItUp();
 
     /* Footer year */
-    var date = new Date().getFullYear();
+    // var date = new Date().getFullYear();
 
-    document.getElementById("copyright_year").innerHTML = date;
+    // document.getElementById("copyright_year").innerHTML = date;
 
     /* Back to top button progress */
     var progressPath = document.querySelector('.back-to-top-wrap path');

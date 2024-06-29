@@ -11,7 +11,9 @@ const  About =()=>{
           <div className="col-lg-12">
             <div className="cr-breadcrumb-title">
               <h2>About Us</h2>
-              <span> <link to="/" />Home - About Us</span>
+              <span> 
+                <Link to="/">Home  </Link>- About Us
+              </span>
             </div>
           </div>
         </div>
@@ -248,9 +250,6 @@ const  About =()=>{
     </div>
   </section>
 </div>
-
-    
-   
         </>
     )
 }
