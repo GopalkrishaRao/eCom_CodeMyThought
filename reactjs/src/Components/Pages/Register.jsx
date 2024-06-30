@@ -1,15 +1,12 @@
-
 import React, { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './Login.css';
 import { Link, useNavigate } from 'react-router-dom';
-import {useUser} from '../Provider/UserProvider';
-
+import { useUser } from '../Provider/UserProvider';
 
 const Register = () => {
-  const { setUserLoggedIn, setUserDetails, userDetails } = useUser();
-
+  const { setUserLoggedIn, setUserDetails } = useUser();
   const navigate = useNavigate(); 
   const initialFormData = {
     firstName: '',
@@ -37,7 +34,38 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // console.log(formData);
+
+    // Regular expressions for validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const phoneRegex = /^[0-9]{10}$/;
+    const postcodeRegex = /^[0-9]{6}$/;
+    const passwordRegex = /^(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[A-Za-z0-9!@#$%^&*]{8,}$/;
+
+
+    // Validate email format
+    if (!emailRegex.test(formData.email)) {
+      toast.error('Please enter a valid email address.');
+      return;
+    }
+
+    // Validate phone number format
+    if (!phoneRegex.test(formData.phoneNumber)) {
+      toast.error('Please enter a valid 10-digit phone number.');
+      return;
+    }
+
+    // Validate postcode format (optional, if required)
+    if (formData.postcode && !postcodeRegex.test(formData.postcode)) {
+      toast.error('Please enter a valid 6-digit postcode.');
+      return;
+    }
+
+    if (!passwordRegex.test(formData.password)) {
+      toast.error('Password must contain at least one uppercase letter, one number, and one special character.');
+      return;
+    }
+
+    // Password match validation
     if (formData.password !== formData.confirmPassword) {
       toast.error('Passwords do not match. Please try again.');
       return;
@@ -51,11 +79,11 @@ const Register = () => {
         },
         body: JSON.stringify(formData),
       });
-  
+
       if (!response.ok) {
         throw new Error('Registration failed');
       }
-  
+
       const data = await response.json();
       console.log('Registration successful:', data);
 
@@ -69,14 +97,10 @@ const Register = () => {
         city: formData.city,
         postcode: formData.postcode,
         country: formData.country,
-        regionState:formData.regionState
+        regionState: formData.regionState
       });
 
-      // console.log("updated from reg Form",userDetails);
-
-      // Redirect to home page
       navigate('/');
-  
       toast.success('Registration successful!', {
         position: "top-right",
         autoClose: 5000,
@@ -86,16 +110,13 @@ const Register = () => {
         draggable: true,
         progress: undefined,
       });
-  
 
-      
       setFormData(initialFormData); // Clear the form
     } catch (error) {
-      console.error('Registration error:', error); // Log the error for debugging
+      console.error('Registration error:', error);
       toast.error('Registration failed. Please try again.');
     }
   };
-  
   return (
     <>
       <section className="section-register padding-tb-100">
