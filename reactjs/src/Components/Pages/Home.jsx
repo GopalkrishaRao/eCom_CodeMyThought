@@ -4,9 +4,10 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useCart } from '../CartContext';
 import { Link } from 'react-router-dom';
-import SideBar from './SideBar';
+import SideBar from '../sharedComponents/SideBar';
 
 import { useProducts } from '../Provider/ProductProvider';
+import Pagination from '../sharedComponents/Pagination';
 
 const Home = () => {
   const { addToCart } = useCart();
@@ -127,16 +128,16 @@ const Home = () => {
                         </div>
                         <div className="cr-side-view">
                           {/* Onclik functionality to add to wachlist and quick view */}
-                          <Link  className="wishlist">
+                          {/* <Link  className="wishlist">
                             <i className="ri-heart-line"></i>
                           </Link>
                           <Link className="model-oraganic-product" data-bs-toggle="modal" role="button">
                             <i className="ri-eye-line"></i>
-                          </Link>
+                          </Link> */}
                         </div>
-                        <Link className="cr-shopping" to="" onClick={() => handleAddToCart(product)}>
+                        {/* <Link className="cr-shopping" to="" onClick={() => handleAddToCart(product)}>
                           <i className="ri-shopping-bag-line"></i>
-                        </Link>
+                        </Link> */}
                       </div>
                       <div className="cr-product-details">
                         <div className="cr-brand">
@@ -161,27 +162,14 @@ const Home = () => {
                           <li><label>Speciality :</label>Gluten Free, Sugar Free</li>
                         </ul>
                         <p className="cr-price"><span className="new-price">${product.price}</span></p>
+                        <button className="cr-button" style={{margin:"10px auto"}} onClick={() => handleAddToCart(product)}>Add to cart</button>
                         <ToastContainer />
                       </div>
                     </div>
                   </div>
                 ))}
               </div>
-              <nav aria-label="..." className="cr-pagination">
-                <ul className="pagination">
-                  <li className="page-item disabled">
-                    <span className="page-link">Previous</span>
-                  </li>
-                  <li className="page-item active" aria-current="page">
-                    <span className="page-link">1</span>
-                  </li>
-                  <li className="page-item"><Link to='/' className="page-link" >2</Link></li>
-                  <li className="page-item"><Link to='/' className="page-link" >3</Link></li>
-                  <li className="page-item">
-                    <Link to='/' className="page-link" >Next</Link>
-                  </li>
-                </ul>
-              </nav>
+              <Pagination/>
             </div>
           </div>
         </div>

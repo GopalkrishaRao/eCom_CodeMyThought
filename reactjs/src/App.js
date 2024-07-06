@@ -2,7 +2,7 @@
 // src/App.jsx or src/Routes.jsx
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Pages from './Components/Pages/Header';
+// import Header from './Components/sharedComponents/Header';
 import Home from './Components/Pages/Home';
 import About from './Components/Pages/About';
 import Contact from './Components/Pages/Contact';
@@ -12,16 +12,16 @@ import ForgoPassword from './Components/Pages/ForgotPassword';
 import Login from './Components/Pages/Login';
 import ProductDetail from './Components/Pages/ProductDetail';
 import Checkout from './Components/Checkout/Checkout';
-import Footer from './Components/Pages/Footer';
+import Footer from './Components/sharedComponents/Footer';
 import UserDashBoard from './Components/Pages/UserDashBoard';
 import ErrorPage from './Components/Pages/ErrorPage';
-
+import Header from './Components/sharedComponents/Header';
 
 const App = () => {
   return (
     
     <Router>
-      <Pages />
+      <Header/>
       <Routes >
         <Route exact path="/" element={<Home/>} />
         <Route path="/About" element={<About/>} />

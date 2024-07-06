@@ -6,7 +6,7 @@ import { useCart } from '../CartContext';
 // import Logo  from '../images/1-19.png';
 import {useUser} from '../Provider/UserProvider';
 
-const Pages = () => {
+const Header = () => {
   const { cart } = useCart();
   const { isUserLoggedIn, setUserLoggedIn, userDetails } = useUser(); 
   
@@ -76,7 +76,7 @@ const handleLogout=()=>{
                                                 <Link className="dropdown-item" to="/Register">Register</Link>
                                                 </li>
                                                 <li>
-                                                <Link className="dropdown-item" to="/Checkout">Checkout</Link>
+                                                {/* <Link className="dropdown-item" to="/Checkout">Checkout</Link> */}
                                             </li>
                                             <li>
                                                 <Link className="dropdown-item" to="/Login">Login</Link>
@@ -502,4 +502,4 @@ const handleLogout=()=>{
     )
 };
 
-export default Pages;
+export default Header;
