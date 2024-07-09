@@ -35,9 +35,9 @@ const Login = () => {
       if (!response.ok) {
         throw new Error('Login failed');
       }
+      toast.success('Logged in successfully!');
 
       const data = await response.json();
-      toast.success('Logged in successfully!')
       setLoginData({
         email: '',
         password: ''

@@ -6,17 +6,15 @@ import { useCart } from '../CartContext';
 // import Logo  from '../images/1-19.png';
 import {useUser} from '../Provider/UserProvider';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const Header = () => {
   const { cart } = useCart();
   const { isUserLoggedIn, setUserLoggedIn, userDetails } = useUser(); 
   
-//   const navigate = useNavigate(); 
-  
 const handleLogout=()=>{
-    setUserLoggedIn(false)
-
-    // Redirect to home page
-    // navigate('/');
+    setUserLoggedIn(false);
 }
   
   return (
@@ -496,6 +494,7 @@ const handleLogout=()=>{
             </div>
         </div>
     </div>
+    <ToastContainer />
 
 
     </>

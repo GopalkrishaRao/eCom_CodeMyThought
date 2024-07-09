@@ -2,12 +2,15 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useCart } from '../CartContext';
 import { Link } from 'react-router-dom';
-import SideBar from '../sharedComponents/SideBar';
 
+import { useCart } from '../CartContext';
 import { useProducts } from '../Provider/ProductProvider';
+
+import SideBar from '../sharedComponents/SideBar';
 import Pagination from '../sharedComponents/Pagination';
+import Banner from '../sharedComponents/Banner';
+import { GridListView } from '../sharedComponents/GridListView';
 
 const Home = () => {
   const { addToCart } = useCart();
@@ -40,7 +43,7 @@ const Home = () => {
     toast.success(`${product.name} added to cart!`);
   };
 
-  const handleImageClick = (id) => {
+  const handleProductClick = (id) => {
     navigate(`/product/${id}`);
   };
 
@@ -64,55 +67,13 @@ const Home = () => {
 
   return (
     <>
-      <section className="section-breadcrumb">
-        <div className="cr-breadcrumb-image">
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-12">
-                <div className="cr-breadcrumb-title">
-                  <h2>Shop</h2>
-                  <span><Link to="/">Home</Link> - Shop</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
+    <Banner/>
       <section className="section-shop padding-tb-100">
         <div className="container">
           <div className="row">
             <SideBar applyFilters={applyFilters} />
             <div className="col-lg-9 col-12 md-30" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="600">
-              <div className="row">
-                <div className="col-12">
-                  <div className="cr-shop-bredekamp">
-                    <div className="cr-toggle">
-                      {/* on click funtionality to view grid view and list view */}
-                      <Link  className="gridCol active-grid">
-                        <i className="ri-grid-line"></i>
-                      </Link>
-                      <Link  className="gridRow">
-                        <i className="ri-list-check-2"></i>
-                      </Link>
-                    </div>
-                    <div className="center-content">
-                      <span>We found {filteredProducts.length} items for you!</span>
-                    </div>
-                    <div className="cr-select">
-                      <label>Sort By :</label>
-                      <select className="form-select" aria-label="Default select example">
-                        <option selected>Featured</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                        <option value="4">Four</option>
-                        <option value="5">Five</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <GridListView className='row' />
               <div className="row col-100 mb-minus-24">
                 {filteredProducts.map((product) => (
                   <div className="col-xxl-3 col-xl-4 col-6 cr-product-box mb-24" key={product.id}>
@@ -122,7 +83,7 @@ const Home = () => {
                           <img
                             src={product.image}
                             alt={product.name}
-                            onClick={() => handleImageClick(product.id)}
+                            onClick={() => handleProductClick(product.id)}
                             style={{ cursor: 'pointer' }}
                           />
                         </div>
@@ -141,7 +102,7 @@ const Home = () => {
                       </div>
                       <div className="cr-product-details">
                         <div className="cr-brand">
-                          <p to=""  onClick={() => handleImageClick(product.id)}
+                          <p   onClick={() => handleProductClick(product.id)}
                             style={{ cursor: 'pointer' }}>{product.name}</p>
                           <div className="cr-star">
                             <i className="ri-star-fill"></i>
@@ -152,18 +113,18 @@ const Home = () => {
                             <p>(4.5)</p>
                           </div>
                         </div>
-                        <Link to="/" className="title">Fresh organic apple 1kg simla marming</Link>
-                        <p className="text">
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore lacus vel facilisis.
+                        <p onClick={() => handleProductClick(product.id)}>
+                          <Link   className="title">{product.name}</Link>
                         </p>
-                        <ul className="list">
-                          <li><label>Brand :</label>ESTA BETTERU CO</li>
-                          <li><label>Diet Type :</label>Vegetarian</li>
-                          <li><label>Speciality :</label>Gluten Free, Sugar Free</li>
-                        </ul>
-                        <p className="cr-price"><span className="new-price">${product.price}</span></p>
-                        <button className="cr-button" style={{margin:"10px auto"}} onClick={() => handleAddToCart(product)}>Add to cart</button>
-                        <ToastContainer />
+                        <p className="cr-price">
+                          <span className="new-price">${product.price}</span>
+                        </p>
+                        <button 
+                          className="cr-button" 
+                          style={{margin:"10px auto"}} 
+                          onClick={() => handleAddToCart(product)}>
+                            Add to cart
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -173,6 +134,7 @@ const Home = () => {
             </div>
           </div>
         </div>
+        <ToastContainer />
       </section>
     </>
   );

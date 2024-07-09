@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+// import { ToastContainer } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
 // import userContext from '../context/Context';
 import {productContext} from '../context/Context';
 
@@ -32,7 +32,7 @@ export const ProdcutProvider = ({ children }) => {
   return (
     <productContext.Provider value={{ products }}>
       {children}
-      <ToastContainer />
+      {/* <ToastContainer /> */}
     </productContext.Provider>
   );
 };
