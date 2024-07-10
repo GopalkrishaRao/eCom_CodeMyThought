@@ -1,111 +1,167 @@
 import { Link } from "react-router-dom";
-const Footer =()=>{
-    const currentYear = new Date().getFullYear();
-    
-  return (
-      <>
-      
- <div>
-  <footer className="footer padding-t-100 bg-off-white">
-    <div className="container">
-      <div className="row footer-top padding-b-100">
-        <div className="col-xl-4 col-lg-6 col-sm-12 col-12 cr-footer-border">
-          <div className="cr-footer-logo">
-            <div className="image">
-              <img src="assets/img/logo/logo.png" alt="logo" className="logo" />
-              <img src="assets/img/logo/dark-logo.png" alt="logo" className="dark-logo" />
-            </div>
-            <p>Carrot is the biggest market of grocery products. Get your daily needs from our store.</p>
-          </div>
-          <div className="cr-footer">
-            <h4 className="cr-sub-title cr-title-hidden">
-              Contact us
-              <span className="cr-heading-res" />
-            </h4>
-            <ul className="cr-footer-links cr-footer-dropdown">
-              <li className="location-icon">
-                51 Green St.Huntington ohaio beach ontario, NY 11746 KY 4783, USA.
-              </li>
-              <li className="mail-icon">
-                example@email.com
-              </li>
-              <li className="phone-icon">
-                +91 123 4567890
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div className="col-xl-2 col-lg-3 col-sm-12 col-12 cr-footer-border">
-          <div className="cr-footer">
-            <h4 className="cr-sub-title">
-              Company
-              <span className="cr-heading-res" />
-            </h4>
-            <ul className="cr-footer-links cr-footer-dropdown">
-            <li><Link to="/">About Us</Link></li>
-            <li><Link to="/">Delivery Information</Link></li>
-            <li><Link to="/">Privacy Policy</Link></li>
-            <li><Link to="/">Terms &amp; Conditions</Link></li>
-            <li><Link to="/">Contact Us</Link></li>
-             <li><Link to="/">Support Center</Link></li>
-            </ul>
-          </div>
-        </div>
-        <div className="col-xl-2 col-lg-3 col-sm-12 col-12 cr-footer-border">
-          <div className="cr-footer">
-            <h4 className="cr-sub-title">
-              Category
-              <span className="cr-heading-res" />
-            </h4>
-            <ul className="cr-footer-links cr-footer-dropdown">
-              <li><Link to='/'>Dairy &amp; Bakery</Link></li>
-              <li><Link to='/'>Fruits &amp; Vegetable</Link></li>
-              <li><Link to='/'>Snack &amp; Spice</Link></li>
-              <li><Link to='/'>Juice &amp; Drinks</Link></li>
-              <li><Link to='/'>Chicken &amp; Meat</Link></li>
-              <li><Link to='/'>Fast Food</Link></li>
-            </ul>
-          </div>
-        </div>
-        <div className="col-xl-4 col-lg-12 col-sm-12 col-12 cr-footer-border">
-          <div className="cr-footer cr-newsletter">
-            <h4 className="cr-sub-title">
-              Subscribe Our Newsletter
-              <span className="cr-heading-res" />
-            </h4>
-            <div className="cr-footer-links cr-footer-dropdown">
-              <form className="cr-search-footer">
-                <input className="search-input" type="text" placeholder="Search here..." />
-                <Link to='/'  className="search-btn">
-                  <i className="ri-send-plane-fill" />
-                </Link>
-              </form>
-            </div>
-            <div className="cr-social-media">
-              <span><Link to='/' ><i className="ri-facebook-line" /></Link></span>
-              <span><Link to='/' ><i className="ri-twitter-x-line" /></Link></span>
-              <span><Link to='/' ><i className="ri-dribbble-line" /></Link></span>
-              <span><Link to='/' ><i className="ri-instagram-line" /></Link></span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="cr-last-footer">
-        <p>&#169;<span id="copyright_year">{currentYear}</span> <Link to='/' href="index.html">Carrot</Link>, All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
-  <a href="#Top" className="back-to-top result-placeholder">
-    <i className="ri-arrow-up-line" />
-    <div className="back-to-top-wrap">
-      <svg viewBox="-1 -1 102 102">
-        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-      </svg>
-    </div>
-  </a>
+const Footer = () => {
+  const currentYear = new Date().getFullYear();
 
-  
-   {/*<div className="cr-cart-overlay" />
+  return (
+    <>
+      <div>
+        <footer className="footer padding-t-100 bg-off-white">
+          <div className="container">
+            <div className="row footer-top padding-b-100">
+              <div className="col-xl-4 col-lg-6 col-sm-12 col-12 cr-footer-border">
+                <div className="cr-footer-logo">
+                  <div className="image">
+                    <img
+                      src="assets/img/logo/logo.png"
+                      alt="logo"
+                      className="logo"
+                    />
+                    <img
+                      src="assets/img/logo/dark-logo.png"
+                      alt="logo"
+                      className="dark-logo"
+                    />
+                  </div>
+                  <p>
+                    Carrot is the biggest market of grocery products. Get your
+                    daily needs from our store.
+                  </p>
+                </div>
+                <div className="cr-footer">
+                  <h4 className="cr-sub-title cr-title-hidden">
+                    Contact us
+                    <span className="cr-heading-res" />
+                  </h4>
+                  <ul className="cr-footer-links cr-footer-dropdown">
+                    <li className="location-icon">
+                      51 Green St.Huntington ohaio beach ontario, NY 11746 KY
+                      4783, USA.
+                    </li>
+                    <li className="mail-icon">example@email.com</li>
+                    <li className="phone-icon">+91 123 4567890</li>
+                  </ul>
+                </div>
+              </div>
+              <div className="col-xl-2 col-lg-3 col-sm-12 col-12 cr-footer-border">
+                <div className="cr-footer">
+                  <h4 className="cr-sub-title">
+                    Company
+                    <span className="cr-heading-res" />
+                  </h4>
+                  <ul className="cr-footer-links cr-footer-dropdown">
+                    <li>
+                      <Link to="/">About Us</Link>
+                    </li>
+                    <li>
+                      <Link to="/">Delivery Information</Link>
+                    </li>
+                    <li>
+                      <Link to="/">Privacy Policy</Link>
+                    </li>
+                    <li>
+                      <Link to="/">Terms &amp; Conditions</Link>
+                    </li>
+                    <li>
+                      <Link to="/">Contact Us</Link>
+                    </li>
+                    <li>
+                      <Link to="/">Support Center</Link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div className="col-xl-2 col-lg-3 col-sm-12 col-12 cr-footer-border">
+                <div className="cr-footer">
+                  <h4 className="cr-sub-title">
+                    Category
+                    <span className="cr-heading-res" />
+                  </h4>
+                  <ul className="cr-footer-links cr-footer-dropdown">
+                    <li>
+                      <Link to="/">Dairy &amp; Bakery</Link>
+                    </li>
+                    <li>
+                      <Link to="/">Fruits &amp; Vegetable</Link>
+                    </li>
+                    <li>
+                      <Link to="/">Snack &amp; Spice</Link>
+                    </li>
+                    <li>
+                      <Link to="/">Juice &amp; Drinks</Link>
+                    </li>
+                    <li>
+                      <Link to="/">Chicken &amp; Meat</Link>
+                    </li>
+                    <li>
+                      <Link to="/">Fast Food</Link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div className="col-xl-4 col-lg-12 col-sm-12 col-12 cr-footer-border">
+                <div className="cr-footer cr-newsletter">
+                  <h4 className="cr-sub-title">
+                    Subscribe Our Newsletter
+                    <span className="cr-heading-res" />
+                  </h4>
+                  <div className="cr-footer-links cr-footer-dropdown">
+                    <form className="cr-search-footer">
+                      <input
+                        className="search-input"
+                        type="text"
+                        placeholder="Search here..."
+                      />
+                      <Link to="/" className="search-btn">
+                        <i className="ri-send-plane-fill" />
+                      </Link>
+                    </form>
+                  </div>
+                  <div className="cr-social-media">
+                    <span>
+                      <Link to="/">
+                        <i className="ri-facebook-line" />
+                      </Link>
+                    </span>
+                    <span>
+                      <Link to="/">
+                        <i className="ri-twitter-x-line" />
+                      </Link>
+                    </span>
+                    <span>
+                      <Link to="/">
+                        <i className="ri-dribbble-line" />
+                      </Link>
+                    </span>
+                    <span>
+                      <Link to="/">
+                        <i className="ri-instagram-line" />
+                      </Link>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="cr-last-footer">
+              <p>
+                &#169;<span id="copyright_year">{currentYear}</span>{" "}
+                <Link to="/" href="index.html">
+                  Carrot
+                </Link>
+                , All rights reserved.
+              </p>
+            </div>
+          </div>
+        </footer>
+        <a href="#Top" className="back-to-top result-placeholder">
+          <i className="ri-arrow-up-line" />
+          <div className="back-to-top-wrap">
+            <svg viewBox="-1 -1 102 102">
+              <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+            </svg>
+          </div>
+        </a>
+
+        {/*<div className="cr-cart-overlay" />
   <div className="cr-cart-view">
     <div className="cr-cart-inner">
       <div className="cr-cart-top">
@@ -266,9 +322,8 @@ const Footer =()=>{
       </div>
     </div> 
    </div> */}
-</div>
-
-      </>
-  )
-}
-export  default Footer
+      </div>
+    </>
+  );
+};
+export default Footer;

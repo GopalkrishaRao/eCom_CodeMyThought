@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const SideBar = ({ applyFilters }) => {
   const [filters, setFilters] = useState({
@@ -20,7 +21,10 @@ const SideBar = ({ applyFilters }) => {
     const { id, value } = e.target;
     setFilters((prevFilters) => ({
       ...prevFilters,
-      priceRange: id === 'minPrice' ? [value, prevFilters.priceRange[1]] : [prevFilters.priceRange[0], value],
+      priceRange:
+        id === "minPrice"
+          ? [value, prevFilters.priceRange[1]]
+          : [prevFilters.priceRange[0], value],
     }));
   };
 
@@ -30,24 +34,41 @@ const SideBar = ({ applyFilters }) => {
   };
 
   return (
-    <div className="col-lg-3 col-12 md-30" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="400">
+    <div
+      className="col-lg-3 col-12 md-30"
+      data-aos="fade-up"
+      data-aos-duration="2000"
+      data-aos-delay="400"
+    >
       <form onSubmit={handleSubmit}>
         <div className="cr-shop-sideview">
           <div className="cr-shop-categories">
             <h4 className="cr-shop-sub-title">Category</h4>
             <div className="cr-checkbox">
               <div className="checkbox-group">
-                <input type="checkbox" id="apple" onChange={handleCategoryChange} />
+                <input
+                  type="checkbox"
+                  id="apple"
+                  onChange={handleCategoryChange}
+                />
                 <label htmlFor="apple">Apple</label>
                 <span>[20]</span>
               </div>
               <div className="checkbox-group">
-                <input type="checkbox" id="samsung" onChange={handleCategoryChange} />
+                <input
+                  type="checkbox"
+                  id="samsung"
+                  onChange={handleCategoryChange}
+                />
                 <label htmlFor="samsung">Samsung</label>
                 <span>[54]</span>
               </div>
               <div className="checkbox-group">
-                <input type="checkbox" id="1plus" onChange={handleCategoryChange} />
+                <input
+                  type="checkbox"
+                  id="1plus"
+                  onChange={handleCategoryChange}
+                />
                 <label htmlFor="1plus">1+</label>
                 <span>[64]</span>
               </div>
@@ -75,7 +96,9 @@ const SideBar = ({ applyFilters }) => {
                   onChange={handlePriceChange}
                 />
               </p>
-              <button type="submit" className="cr-button">Filter</button>
+              <button type="submit" className="cr-button">
+                Filter
+              </button>
             </div>
           </div>
           <div className="cr-shop-color">
@@ -119,12 +142,24 @@ const SideBar = ({ applyFilters }) => {
             <h4 className="cr-shop-sub-title">Tags</h4>
             <div className="cr-shop-tags-inner">
               <ul className="cr-tags">
-                <li><a href="javascript:void(0)">Vegetables</a></li>
-                <li><a href="javascript:void(0)">Juice</a></li>
-                <li><a href="javascript:void(0)">Food</a></li>
-                <li><a href="javascript:void(0)">Dry Fruits</a></li>
-                <li><a href="javascript:void(0)">Vegetables</a></li>
-                <li><a href="javascript:void(0)">Juice</a></li>
+                <li>
+                  <Link to="/">Vegetables</Link>
+                </li>
+                <li>
+                  <Link to="/">Juice</Link>
+                </li>
+                <li>
+                  <Link to="/">Food</Link>
+                </li>
+                <li>
+                  <Link to="/">Dry Fruits</Link>
+                </li>
+                <li>
+                  <Link to="/">Vegetables</Link>
+                </li>
+                <li>
+                  <Link to="/">Juice</Link>
+                </li>
               </ul>
             </div>
           </div>

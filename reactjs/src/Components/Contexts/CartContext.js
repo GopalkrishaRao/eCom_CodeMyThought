@@ -1,21 +1,18 @@
-// src/CartContext.jsx
-import React, { createContext, useContext, useState,useEffect } from 'react';
-// import { toast, ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import React, { createContext, useContext, useState, useEffect } from "react";
+
 const CartContext = createContext();
 
 export const useCart = () => useContext(CartContext);
 
 export const CartProvider = ({ children }) => {
-//   const [cart, setCart] = useState([]);
-const [cart, setCart] = useState(() => {
-    const savedCart = localStorage.getItem('cart');
+  const [cart, setCart] = useState(() => {
+    const savedCart = localStorage.getItem("cart");
     return savedCart ? JSON.parse(savedCart) : [];
   });
 
   useEffect(() => {
-    localStorage.setItem('cart', JSON.stringify(cart));
-  },[cart]);
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
 
   const addToCart = (item) => {
     setCart((prevCart) => {
@@ -40,7 +37,9 @@ const [cart, setCart] = useState(() => {
   const decrementItem = (id) => {
     setCart((prevCart) =>
       prevCart.map((item) =>
-        item.id === id ? { ...item, quantity: Math.max(item.quantity - 1, 1) } : item
+        item.id === id
+          ? { ...item, quantity: Math.max(item.quantity - 1, 1) }
+          : item
       )
     );
   };
@@ -50,9 +49,10 @@ const [cart, setCart] = useState(() => {
   };
 
   return (
-    <CartContext.Provider value={{ cart, addToCart, incrementItem, decrementItem, removeItem }}>
+    <CartContext.Provider
+      value={{ cart, addToCart, incrementItem, decrementItem, removeItem }}
+    >
       {children}
-      <toast />
     </CartContext.Provider>
   );
 };

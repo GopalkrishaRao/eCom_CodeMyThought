@@ -1,23 +1,23 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css'; 
-import {useUser} from '../Provider/UserProvider';
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useUser } from "../Contexts/AuthContext";
 
 const Login = () => {
   const { setUserLoggedIn } = useUser();
 
   const navigate = useNavigate();
   const [loginData, setLoginData] = useState({
-    email: '',
-    password: ''
+    email: "",
+    password: "",
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setLoginData((prevData) => ({
       ...prevData,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -26,31 +26,30 @@ const Login = () => {
     const { email, password } = loginData;
 
     try {
-      const response = await fetch('http://localhost:3010/api/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+      const response = await fetch("http://localhost:3010/api/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(loginData),
       });
 
       if (!response.ok) {
-        throw new Error('Login failed');
+        throw new Error("Login failed");
       }
-      toast.success('Logged in successfully!');
+      toast.success("Logged in successfully!");
 
       const data = await response.json();
       setLoginData({
-        email: '',
-        password: ''
-      })
+        email: "",
+        password: "",
+      });
 
       setUserLoggedIn(true);
-      
-      // Redirect to home page
-      navigate('/');
 
+      // Redirect to home page
+      navigate("/");
     } catch (error) {
-      console.error('Login error:', error);
-      toast.error('Login failed. Please try again.');
+      console.error("Login error:", error);
+      toast.error("Login failed. Please try again.");
     }
   };
 
@@ -63,7 +62,10 @@ const Login = () => {
               <div className="col-lg-12">
                 <div className="cr-breadcrumb-title">
                   <h2>Login</h2>
-                  <span> <a href="index.html">Home</a> - Login</span>
+                  <span>
+                    {" "}
+                    <a href="index.html">Home</a> - Login
+                  </span>
                 </div>
               </div>
             </div>
@@ -75,7 +77,12 @@ const Login = () => {
         <div className="container">
           <div className="row">
             <div className="col-12">
-              <div className="cr-login" data-aos="fade-up" data-aos-duration="2000" data-aos-delay="400">
+              <div
+                className="cr-login"
+                data-aos="fade-up"
+                data-aos-duration="2000"
+                data-aos-delay="400"
+              >
                 <div className="form-logo">
                   <img src="assets/img/logo/logo.png" alt="logo" />
                 </div>
@@ -113,7 +120,7 @@ const Login = () => {
                   </div>
                   <br />
                   <div className="login-buttons">
-                    <button type="submit" className="cr-button">
+                    <button type="submit" className="cr-button ">
                       Login
                     </button>
                     <Link to="/Register" className="link">
