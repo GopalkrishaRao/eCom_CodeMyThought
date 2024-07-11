@@ -42,7 +42,7 @@ const Header = () => {
                     type="text"
                     placeholder="Search For items..."
                   />
-                  <select
+                  {/* <select
                     className="form-select"
                     aria-label="Default select example"
                   >
@@ -50,7 +50,18 @@ const Header = () => {
                     <option value="1">Mens</option>
                     <option value="2">Womens</option>
                     <option value="3">Electronics</option>
+                  </select> */}
+                  <select
+                    className="form-select"
+                    aria-label="Default select example"
+                    defaultValue="All Categories"
+                  >
+                    <option value="All Categories">All Categories</option>
+                    <option value="1">Mens</option>
+                    <option value="2">Womens</option>
+                    <option value="3">Electronics</option>
                   </select>
+
                   <Link className="search-btn">
                     <i className="ri-search-line"></i>
                   </Link>

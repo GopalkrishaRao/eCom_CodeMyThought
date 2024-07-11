@@ -19,8 +19,12 @@ export const GridListView = () => {
           </div>
           <div className="cr-select">
             <label>Sort By :</label>
-            <select className="form-select" aria-label="Default select example">
-              <option selected>Featured</option>
+            <select
+              className="form-select"
+              aria-label="Default select example"
+              defaultValue="Featured"
+            >
+              <option value>Featured</option>
               <option value="1">One</option>
               <option value="2">Two</option>
               <option value="3">Three</option>
