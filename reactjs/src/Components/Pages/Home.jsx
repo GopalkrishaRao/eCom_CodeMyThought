@@ -33,7 +33,7 @@ const Home = () => {
   // };
 
   const [filteredProducts, setFilteredProducts] = useState(products);
-
+  // toast.success("Welcome to home page");
   const handleAddToCart = (products) => {
     console.log("Adding to cart:", products);
     addToCart(products);
